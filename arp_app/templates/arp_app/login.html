@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'arp_app/css/style.css' %}">
+</head>
+<body>
+<header class="main-header">
+  <div class="image-container blur-background">
+    <img src="https://w0.peakpx.com/wallpaper/1018/1009/HD-wallpaper-emlem-emblem-indian-king-ashoka-lion-proud-satyamev-jayate.jpg" alt="Emblem" />
+    <img src="https://cpcb.nic.in/images/glpi.jpg" alt="GLPI Logo" />
+    <img src="https://cpcb.nic.in/images/logo-name2.jpg" alt="Logo Name" />
+  </div>
+  <a href="#" class="login-btn" id="loginBtn">Login</a>
+  <div id="loginPopup">
+      <form id="loginForm" method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+
+      <h2>Login</h2>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required>
+      <label for="password">Password:</label> 
+      <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit">Login</button>
+
+      <p id="errorMsg"></p>
+
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <div id="forgotPassword">
+        <a href="#" id="forgotLink">Forgot password?</a>
+      </div>
+    </form>
+  </div>
+</header>
+<div class="layout blur-background">
+  <div class="container">
+    <h3>Welcome users!</h3>
+    <p>Select an option from sidebar</p>
+  </div>
+</div>
+<footer class="footer blur-background">
+  <p>&copy; 2025 CPCB. All rights reserved.</p>
+</footer>
+<script src="{% static 'arp_app/js/script.js' %}"></script>
+</body>
+</html>

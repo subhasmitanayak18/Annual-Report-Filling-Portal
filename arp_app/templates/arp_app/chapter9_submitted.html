@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 9 - Submitted Report</title>
+  <link rel="stylesheet" href="{% static 'arp_app/css/chapter9.css' %}">
+  <style>
+    .submitted-banner {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 6px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submitted-banner::before {
+      content: "✅";
+      font-size: 1.2rem;
+    }
+
+    .data-section {
+      margin-bottom: 20px;
+    }
+
+    .data-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 10px 0 4px;
+    }
+
+    .data-box {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 12px 16px;
+      min-height: 52px;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .data-box.empty::after {
+      content: "No data provided.";
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 24px;
+      background-color: #2d6a4f;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .back-btn:hover {
+      background-color: #1b4332;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="image-container">
+      <img src="https://as1.ftcdn.net/v2/jpg/07/29/34/34/1000_F_729343438_gqEk9CipKxy5FVnabVTCyr65qGqM4Fv1.jpg"
+        alt="Emblem" />
+      <img src="https://cpcb.nic.in/images/glpi.jpg" alt="GLPI Logo" />
+    </div>
+    <div class="header">
+      <p>Central Pollution Control Board<br>Ministry of Environment, Forest and Climate Change<br>Government of India
+      </p>
+    </div>
+  </header>
+
+  <div class="heading">
+    <div class="left-side"><a href="/" class="home-btn">Home</a></div>
+    <div class="right-side"><a href="/login/" class="logout">Logout</a></div>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <img src="https://www.shutterstock.com/image-vector/user-profile-3d-icon-avatar-600nw-2226554631.jpg"
+        alt="User Avatar" class="avatar" />
+      <h3>Dashboard</h3>
+      <h3>Reports</h3>
+      <h3>Settings</h3>
+    </div>
+
+    <div class="format">
+      <h1>Chapter 9</h1>
+      <p class="main_heading">Environmental Awareness and Public Participation</p>
+      <div class="data-section">
+        <p class="sub_heading">9.1 Events carried out for Environmental Awareness</p>
+        <p class="data-label">9.1.1 Exhibitions</p>
+        <div class="data-box {% if not data.exhibitions %}empty{% endif %}">{{ data.exhibitions }}</div>
+        <p class="data-label">9.1.2 World Environment Day Celebration</p>
+        <div class="data-box {% if not data.wed_celebration %}empty{% endif %}">{{ data.wed_celebration }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">9.2 Redressal of Public Grievances through CPGRAM Portal</p>
+        <div class="data-box {% if not data.public_grievances %}empty{% endif %}">{{ data.public_grievances }}</div>
+      </div>
+
+      <a href="{% url 'chapter9' %}" class="back-btn">← Edit / Resubmit</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 CPCB. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

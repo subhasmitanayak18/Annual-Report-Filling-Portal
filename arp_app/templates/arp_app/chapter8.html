@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPCB User 8 Dashboard</title>
+  <link rel="stylesheet" href="{% static 'arp_app/css/chapter8.css' %}">
+</head>
+<body>
+  <header class="main-header">
+    <div class="image-container">
+      <img src="https://as1.ftcdn.net/v2/jpg/07/29/34/34/1000_F_729343438_gqEk9CipKxy5FVnabVTCyr65qGqM4Fv1.jpg" alt="Emblem" />
+      <img src="https://cpcb.nic.in/images/glpi.jpg" alt="GLPI Logo" />
+    </div>
+    <div class="header">
+      <p>Central Pollution Control Board<br>
+         Ministry of Environment, Forest and Climate Change<br>
+         Government of India
+      </p>
+    </div>
+  </header>
+  <div class="heading">
+    <div class="left-side">
+      <a href="home1.html" class="home-btn">Home</a>
+    </div>
+    <div class="right-side">
+    <a href="/login/" class="logout">Logout</a>
+  </div>
+  </div>
+  <div class="content">
+    <div class="sidebar">
+      <img src="https://www.shutterstock.com/image-vector/user-profile-3d-icon-avatar-600nw-2226554631.jpg" alt="User Avatar" class="avatar" />
+      <h3>Dashboard</h3>
+      <h3>Reports</h3>
+      <h3>Settings</h3>
+    </div>
+    <div class="format">
+      <h1>Chapter 8</h1>
+      <p class="main_heading">Environmental training</p>
+
+      <form method="POST" action="">
+        <p class="sub_heading1">Environmental training</p>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for Training"></div>
+        <input id="imageUploader" type="file" accept="image/*">
+        <p class="sub_heading">8.1 Training-cum-Orientation Programme for newly joined Scientists</p>
+        <textarea name="training_orientation" placeholder="Enter details for Training-cum-Orientation Programme"></textarea>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 CPCB. All rights reserved.</p>
+  </footer>
+  <script>
+    function logout() {
+      alert('You have been logged out.');
+    }
+  </script>
+</body>
+</html>

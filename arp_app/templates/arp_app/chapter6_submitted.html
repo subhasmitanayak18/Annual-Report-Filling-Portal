@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 6 - Submitted Report</title>
+  <link rel="stylesheet" href="{% static 'arp_app/css/chapter6.css' %}">
+  <style>
+    .submitted-banner {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 6px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submitted-banner::before {
+      content: "✅";
+      font-size: 1.2rem;
+    }
+
+    .data-section {
+      margin-bottom: 20px;
+    }
+
+    .data-section .sub_heading {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .data-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 10px 0 4px;
+    }
+
+    .data-box {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 12px 16px;
+      min-height: 52px;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .data-box.empty::after {
+      content: "No data provided.";
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 24px;
+      background-color: #2d6a4f;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .back-btn:hover {
+      background-color: #1b4332;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="image-container">
+      <img src="https://as1.ftcdn.net/v2/jpg/07/29/34/34/1000_F_729343438_gqEk9CipKxy5FVnabVTCyr65qGqM4Fv1.jpg"
+        alt="Emblem" />
+      <img src="https://cpcb.nic.in/images/glpi.jpg" alt="GLPI Logo" />
+    </div>
+    <div class="header">
+      <p>Central Pollution Control Board<br>Ministry of Environment, Forest and Climate Change<br>Government of India
+      </p>
+    </div>
+  </header>
+
+  <div class="heading">
+    <div class="left-side"><a href="/" class="home-btn">Home</a></div>
+    <div class="right-side"><a href="/login/" class="logout">Logout</a></div>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <img src="https://www.shutterstock.com/image-vector/user-profile-3d-icon-avatar-600nw-2226554631.jpg"
+        alt="User Avatar" class="avatar" />
+      <h3>Dashboard</h3>
+      <h3>Reports</h3>
+      <h3>Settings</h3>
+    </div>
+
+    <div class="format">
+      <h1>Chapter 6</h1>
+      <p class="main_heading">Present State Of Environment, Environmental Problems And Counter Measures</p>
+      <div class="data-section">
+        <p class="sub_heading">6.3 Common Effluent Treatment Plants</p>
+        <div class="data-box {% if not data.cetp %}empty{% endif %}">{{ data.cetp }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.4 Construction &amp; Demolition Waste Management</p>
+        <div class="data-box {% if not data.cdwm %}empty{% endif %}">{{ data.cdwm }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.6 E-Waste Management</p>
+        <div class="data-box {% if not data.ewaste %}empty{% endif %}">{{ data.ewaste }}</div>
+        <p class="data-label">6.6.1 Activities carried out during FY 2022-2023</p>
+        <div class="data-box {% if not data.ewaste_activities %}empty{% endif %}">{{ data.ewaste_activities }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.7 Management of Waste Tyre</p>
+        <div class="data-box {% if not data.waste_tyre %}empty{% endif %}">{{ data.waste_tyre }}</div>
+        <p class="data-label">6.7.1 Activities carried out during FY 2022-2023</p>
+        <div class="data-box {% if not data.waste_tyre_activities %}empty{% endif %}">{{ data.waste_tyre_activities }}
+        </div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.8 Management of Battery Waste</p>
+        <div class="data-box {% if not data.battery_waste %}empty{% endif %}">{{ data.battery_waste }}</div>
+        <p class="data-label">6.8.1 Introduction</p>
+        <div class="data-box {% if not data.battery_intro %}empty{% endif %}">{{ data.battery_intro }}</div>
+        <p class="data-label">6.8.2 Extended Producer Responsibilities (EPR) under BWM Rules, 2022</p>
+        <div class="data-box {% if not data.battery_epr %}empty{% endif %}">{{ data.battery_epr }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.9 Fly-ash Management</p>
+        <div class="data-box {% if not data.flyash %}empty{% endif %}">{{ data.flyash }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.10 Hazardous Waste Management</p>
+        <div class="data-box {% if not data.hazardous %}empty{% endif %}">{{ data.hazardous }}</div>
+        <p class="data-label">6.10.2 Standard Operating Procedures (SoPs) for Utilization of Hazardous Wastes</p>
+        <div class="data-box {% if not data.hazardous_sop %}empty{% endif %}">{{ data.hazardous_sop }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.11 Assessment and Remediation of Contaminated Sites</p>
+        <div class="data-box {% if not data.contaminated_assessment %}empty{% endif %}">{{ data.contaminated_assessment
+          }}</div>
+      </div>
+
+      <div class="data-section">
+        <p class="sub_heading">6.13 Bio-medical Waste Management</p>
+        <div class="data-box {% if not data.biomedical %}empty{% endif %}">{{ data.biomedical }}</div>
+        <p class="data-label">6.13.1 Bio-medical Waste Management Scenario</p>
+        <div class="data-box {% if not data.biomedical_scenario %}empty{% endif %}">{{ data.biomedical_scenario }}</div>
+        <p class="data-label">6.13.2 Implementation of Bio-Medical Waste Management Rules-2016</p>
+        <div class="data-box {% if not data.biomedical_implementation %}empty{% endif %}">{{
+          data.biomedical_implementation }}</div>
+      </div>
+
+      <a href="{% url 'chapter6' %}" class="back-btn">← Edit / Resubmit</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 CPCB. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

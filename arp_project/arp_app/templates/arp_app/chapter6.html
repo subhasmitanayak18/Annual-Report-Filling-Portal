@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPCB User 6 Dashboard</title>
+  <link rel="stylesheet" href="{% static 'arp_app/css/chapter6.css' %}">
+</head>
+<body>
+  <header class="main-header">
+    <div class="image-container">
+      <img src="https://as1.ftcdn.net/v2/jpg/07/29/34/34/1000_F_729343438_gqEk9CipKxy5FVnabVTCyr65qGqM4Fv1.jpg" alt="Emblem" />
+      <img src="https://cpcb.nic.in/images/glpi.jpg" alt="GLPI Logo" />
+    </div>
+    <div class="header">
+      <p>Central Pollution Control Board<br>
+        Ministry of Environment, Forest and Climate Change<br>
+        Government of India
+      </p>
+    </div>
+  </header>
+
+  <div class="heading">
+    <div class="left-side">
+      <a href="home1.html" class="home-btn">Home</a>
+      <p>Welcome IT Division</p>
+    </div>
+   <div class="right-side">
+    <a href="/login/" class="logout">Logout</a>
+  </div>  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <img src="https://www.shutterstock.com/image-vector/user-profile-3d-icon-avatar-600nw-2226554631.jpg" alt="User Avatar" class="avatar" />
+      <h3>Dashboard</h3>
+      <h3>Reports</h3>
+      <h3>Settings</h3>
+    </div>
+
+    <div class="format">
+      <h1>Chapter 6</h1>
+      <p class="main_heading">Present State Of Environment, Environmental Problems And Counter Measures</p>
+
+        <p class="sub_heading">6.1 Comprehensive Environmental Pollution Index</p>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for Comprehensive Environmental Pollution Index"></div>
+        <input id="imageUploader" type="file" accept="image/*">
+        <p class="sub_heading">6.2 Categorization of Industrial Sectors</p>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for Categorization of Industrial Sectors"></div>
+        <input id="imageUploader" type="file" accept="image/*">
+
+        <p class="sub_heading">6.3 Common Effluent Treatment Plants</p>
+        <textarea name="cetp" placeholder="Enter details for Common Effluent Treatment Plants"></textarea>
+
+        <p class="sub_heading">6.4 Construction & Demolition Waste Management</p>
+        <textarea name="cdwm" placeholder="Enter details for Construction & Demolition Waste Management"></textarea>
+        <label>6.4.1 C&D waste processing facility</label>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for C&D waste processing facility"></div>
+
+        <p class="sub_heading">6.5 Revision of Emission norms of Generator sets</p>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for Revision of Emission norms of Generator sets"></div>
+
+        <p class="sub_heading">6.6 E-Waste Management</p>
+        <textarea name="ewaste" placeholder="Enter details for E-Waste Management"></textarea>
+        <label>6.6.1 Activities carried out during FY 2022-2023</label>
+        <textarea name="ewaste_activities" placeholder="Enter details of activities carried out during FY 2022-2023"></textarea>
+
+        <p class="sub_heading">6.7 Management of Waste Tyre</p>
+        <textarea name="waste_tyre" placeholder="Enter details for Management of Waste Tyre"></textarea>
+        <label>6.7.1 Activities carried out during FY 2022-2023</label>
+        <textarea name="waste_tyre_activities" placeholder="Enter details of activities carried out during FY 2022-2023"></textarea>
+
+        <p class="sub_heading">6.8 Management of Battery Waste</p>
+        <textarea name="battery_waste" placeholder="Enter details for Management of Battery Waste"></textarea>
+        <label>6.8.1 Introduction</label>
+        <textarea name="battery_intro" placeholder="Enter introduction details"></textarea>
+        <label>6.8.2 Extended Producer Responsibilities (EPR) under BWM Rules, 2022</label>
+        <textarea name="battery_epr" placeholder="Enter details for EPR under BWM Rules, 2022"></textarea>
+        <label>6.8.3 Registration</label>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter registration details"></div>
+
+        <p class="sub_heading">6.9 Fly-ash Management</p>
+        <textarea name="flyash" placeholder="Enter details for Fly-ash Management"></textarea>
+
+        <p class="sub_heading">6.10 Hazardous Waste Management</p>
+        <textarea name="hazardous" placeholder="Enter details for Hazardous Waste Management"></textarea>
+        <label>6.10.1 National Inventory on Generation and Management of Hazardous and Other Wastes</label>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for National Inventory"></div>
+        <input id="imageUploader" type="file" accept="image/*"><br>
+
+        <label>6.10.2 Standard Operating Procedures (SoPs) for Utilization of Hazardous Wastes</label>
+        <textarea name="hazardous_sop" placeholder="Enter details for SoPs for Utilization of Hazardous Wastes"></textarea>
+
+        <p class="sub_heading">6.11 Assessment and Remediation of Contaminated Sites</p>
+        <textarea name="contaminated_assessment" placeholder="Enter details for Assessment and Remediation of Contaminated Sites"></textarea>
+
+        <p class="sub_heading">6.12 Status of Contaminated Sites in India</p>
+        <div id="table" name="div" contenteditable="true" data-placeholder="Enter status of contaminated sites in India"></div>
+        <label>6.12.1 Remediation of contaminated sites</label>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details of remediation"></div>
+        <input id="imageUploader" type="file" accept="image/*">
+
+        <p class="sub_heading">6.13 Bio-medical Waste Management</p>
+        <textarea name="biomedical" placeholder="Enter details for Bio-medical Waste Management"></textarea>
+        <label>6.13.1 Bio-medical Waste Management Scenario</label>
+        <textarea name="biomedical_scenario" placeholder="Enter Bio-medical Waste Management Scenario"></textarea>
+        <label>6.13.2 Implementation of Bio-Medical Waste Management Rules-2016</label>
+        <textarea name="biomedical_implementation" placeholder="Enter details of Implementation of Bio-Medical Waste Management Rules-2016"></textarea>
+        
+        <p class="sub_heading">6.14 Plastic Waste Management</p>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details for Plastic Waste Management"></div>
+        <input id="imageUploader" type="file" accept="image/*"><br>
+        
+        <label>6.14.1 Implementation of Plastic Wastes Management Rules</label>
+        <div id="table" name="table" contenteditable="true" data-placeholder="Enter details of Implementation of Plastic Wastes Management Rules"></div>
+        <input id="imageUploader" type="file" accept="image/*">
+    
+        <div class="button-container">
+          <button type="submit" class="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 CPCB. All rights reserved.</p>
+  </footer>
+</body>
+</html>
