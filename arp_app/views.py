@@ -14,6 +14,7 @@ def login_view(request):
             user = User.objects.get(email=email)
 
             if user.check_password(password):
+                user.backend = 'django.contrib.auth.backends.ModelBackend'
                 login(request, user)
 
                 role = user.role.role.strip().lower()
@@ -44,6 +45,8 @@ def login_view(request):
                     return redirect('chapter11')
                 elif role == 'filling_user' and division == 'Finance and Accounts':
                     return redirect('chapter12')
+                else:
+                    messages.error(request, f'No page configured for role "{role}" / division "{division}".')
                 
             
                 
