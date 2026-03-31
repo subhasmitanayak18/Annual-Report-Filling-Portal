@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  display: flex;
+  gap: 15px;
+}
+
+.image-container img {
+  height: 70px;
+  object-fit: contain;
+}
+
+.login-btn {
+  display: none;
+
+}
+
+#loginPopup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 300px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#loginForm {
+  display: block;
+  bottom: 23px;
+  position: relative;
+}
+
+#loginPopup input {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#loginPopup button {
+  width: 100%;
+  padding: 10px;
+  background: #2253bd;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#loginPopup button:hover {
+  background: #555;
+}
+
+.blur-background {
+  filter: blur(2px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* #errorMsg {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0 0;
+  min-height: 18px;
+} */
+
+#forgotPassword {
+  margin-top: 2px;
+  text-align: center;
+  font-size: 13px;
+}
+
+#forgotPassword a {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+#forgotPassword a:hover {
+  text-decoration: underline;
+}
+
+.layout {
+  flex: 1;
+  display: flex;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+}
+
+.footer {
+  background-color: rgb(34, 71, 183);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.blur-background {
+  filter: blur(2px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.messages {
+  color: red;
+  list-style: none;
+  padding-left: 10px;
+}
